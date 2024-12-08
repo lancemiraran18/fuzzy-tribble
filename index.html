@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Lance Miraran</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #0d0d0d;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header Section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: #16191f;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            font-size: 1rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #0400ff;
+            transform: scale(1.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 20px;
+            background: #16191f;
+            flex-wrap: wrap;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero .content {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #eff4ff;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+
+        .hero .buttons a {
+            margin-right: 10px;
+            padding: 10px 20px;
+            background: #00b7ff;
+            color: #fff;
+            border-radius: 5px;
+            transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+        }
+
+        .hero .buttons a:hover {
+            background: #0045e6;
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 170, 255, 0.5);
+        }
+
+        .hero img {
+            max-width: 300px;
+            border-radius: 10px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 50px 20px;
+            background: #20232a;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #dbdbdb;
+        }
+
+        .about p {
+            font-size: 1rem;
+            color: #ccc;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Activities Section */
+        .activities {
+            padding: 50px 20px;
+            background: #16191f;
+            text-align: center;
+        }
+
+        .activities h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .activities p {
+            font-size: 1rem;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .activities .download-link a {
+            padding: 10px 20px;
+            background: #0066ff;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+        }
+
+        .activities .download-link a:hover {
+            background: #000ce6;
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 140, 255, 0.5);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 50px 20px;
+            background: #20232a;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .contact p {
+            font-size: 1rem;
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+        .contact .email:hover {
+            color: #000ce6;
+        }
+
+        /* Footer Section */
+        footer {
+            background: #16191f;
+            padding: 20px;
+            text-align: center;
+            color: #ccc;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero img {
+                margin: 20px 0;
+                max-width: 80%;
+            }
+
+            .hero .content {
+                margin: 0;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+            }
+
+            nav ul li {
+                margin: 5px 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .about h2,
+            .activities h2,
+            .contact h2 {
+                font-size: 1.8rem;
+            }
+
+            .about p,
+            .activities p,
+            .contact p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#contact">Contact</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <div class="content">
+            <h1>Hello, I'm Lance Miraran</h1>
+            <p>A passionate IT student from Tongdol, Irosin, Sorsogon.<br>I specialize in designing and building innovative solutions for the digital world.</p>
+            <div class="buttons">
+                <a href="#about">Learn More</a>
+                <a href="#activities">See Activities</a>
+            </div>
+        </div>
+        <img src="your-photo.jpg" alt="Lance Miraran">
+    </section>
+    
+    <section class="about" id="about">
+        <h2>About Me</h2>
+        <p>
+            I'm an 18-year-old Bachelor of Science in Information Technology student at Veritas Irosin College. My goal is to develop solutions that can help businesses and individuals thrive in the modern world. 
+            I have a keen interest in web design, development, and user experience.
+        </p>
+    </section>
+    
+    <section class="activities" id="activities">
+        <h2>Activities</h2>
+        <p>Autobiography</p>
+        <div class="download-link">
+            <a href="documents/autobiography.pptx" download>Download My PPT</a>
+        </div>
+    </section>
+    
+    <section class="contact" id="contact">
+        <h2>Contact</h2>
+        <p class="email">Email: <a href="mailto:lancemiraran96@gmail.com">lancemiraran96@gmail.com</a></p>
+        <p>Phone: 09300158990</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 Lance Miraran. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
